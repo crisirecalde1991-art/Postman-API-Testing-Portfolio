@@ -1,0 +1,73 @@
+{
+  "info": {
+    "_postman_id": "7d2a647e-441c-459b-bc3b-f871c471c84d",
+    "name": "Restful-Booker_Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50897148",
+    "_collection_link": "https://go.postman.co/collection/50897148-7d2a647e-441c-459b-bc3b-f871c471c84d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "{{url_base}}/booking",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstname\" : \"Juan\",\r\n    \"lastname\" : \"Tester\",\r\n    \"totalprice\" : 100,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2026-02-01\",\r\n        \"checkout\" : \"2026-02-10\"\r\n    },\r\n    \"additionalneeds\" : \"Lunch\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url_base}}/booking",
+          "host": [
+            "{{url_base}}"
+          ],
+          "path": [
+            "booking"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{url_base}}/booking/{{id_reserva}}",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "cookie",
+            "value": "token={{mi_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{url_base}}/booking/{{id_reserva}}",
+          "host": [
+            "{{url_base}}"
+          ],
+          "path": [
+            "booking",
+            "{{id_reserva}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
