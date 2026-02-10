@@ -16,3 +16,10 @@ Se validaron los siguientes puntos críticos:
 
 ## 🕵️ Troubleshooting (Resolución de Problemas)
 Durante el desarrollo, se identificaron y resolvieron bloqueos de seguridad **403 Forbidden**, ajustando la configuración de los Headers de autenticación y la vigencia de los tokens dinámicos.
+Ejecucion y Reportes
+## 🚀 Ejecución de Pruebas Automáticas
+Las pruebas se ejecutan utilizando **Newman** (la CLI de Postman), lo que permite integrar estos tests en flujos de CI/CD.
+
+### Comandos de ejecución:
+```bash
+newman run Coleccion.json -e Ambiente.json -r htmlextra
